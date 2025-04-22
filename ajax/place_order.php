@@ -20,7 +20,7 @@ $state = $_POST['state'];
 $country = $_POST['country'];
 $payment_mode = $_POST['payment_mode'];
 
-$stmt = $conn->prepare("INSERT INTO users (firstname, lastname, address, mobile, email, pincode, city, state, country)
+$stmt = $conn->prepare("INSERT INTO users (firstname, lastname, address, mobile_number, email, pincode, city, state, country)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("sssssssss", $firstname, $lastname, $address, $mobile, $email, $pincode, $city, $state, $country);
 $stmt->execute();
